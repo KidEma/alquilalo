@@ -17,6 +17,7 @@ export class AuthGuard implements CanActivate {
     } else {
       // Send guarded route to redirect to after logging in
       this.auth.login(state.url);
+     // this.auth.login("/home");
       return false;
     }
   }

@@ -45,7 +45,8 @@ export class AuthService {
 
   login(redirect?: string) {
     // Set redirect after login
-    const _redirect = redirect ? redirect : this.router.url;
+    //const _redirect = redirect ? redirect : this.router.url;
+    const _redirect = redirect ? redirect : "/home";
     localStorage.setItem('authRedirect', _redirect);
     // Auth0 authorize request
     this._auth0.authorize();
@@ -71,7 +72,7 @@ export class AuthService {
     this._auth0.client.userInfo(authResult.accessToken, (err, profile) => {
       if (profile) {
         this._setSession(authResult, profile);
-        this.router.navigate([localStorage.getItem('authRedirect') || '/']);
+        this.router.navigate([localStorage.getItem('authRedirect') || '/home']);
         this._clearRedirect();
       } else if (err) {
         console.error(`Error authenticating: ${err.error}`);

@@ -6,6 +6,7 @@ import { CallbackComponent } from '../pages/callback/callback.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { AdminGuard } from '../auth/admin.guard';
 import { AdminComponent } from '../pages/admin/admin.component';
+import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
+    component: DashboardComponent,
     canActivate: [
       AuthGuard
     ]

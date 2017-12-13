@@ -5,6 +5,7 @@
 
 @import '../assets/scss/partials/layout.vars';
 @import '../assets/scss/partials/responsive.partial';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 .layout-overflow {
   overflow: hidden; /* necessary to handle offcanvas scrollbar behavior */

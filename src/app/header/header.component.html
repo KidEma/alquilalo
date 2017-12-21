@@ -1,8 +1,8 @@
 <!-- src/app/header/header.component.html -->
 <header id="header" class="header">
   <div class="header-page bg-primary">
-
-    <a class="toggle-offcanvas bg-primary" (click)="toggleNav()"><span></span></a>
+<!-- 
+    <a class="toggle-offcanvas bg-primary" (click)="toggleNav()"><span></span></a> -->
     <h1 class="header-page-siteTitle">
       <a routerLink="/">Alquilalo!</a>
     </h1>
@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <nav id="nav" class="nav" role="navigation">
+  <!-- <nav id="nav" class="nav" role="navigation">
     <ul class="nav-list">
       <li>
         <a
@@ -30,5 +30,6 @@
             [routerLinkActiveOptions]="{ exact: true }">Admin</a>
         </li>
     </ul>
-  </nav>
+  </nav> -->
+<app-menu></app-menu>
 </header>

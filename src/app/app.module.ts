@@ -42,7 +42,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
  * 
  * */
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {AppAngularMaterialModule} from '../app/app-angular-material/app-angular-material.module'
+import {AppAngularMaterialModule} from '../app/app-angular-material/app-angular-material.module';
+import { MenuComponent } from './menu/menu.component'
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import {AppAngularMaterialModule} from '../app/app-angular-material/app-angular-
     LoadingComponent,
     AdminComponent,
     LandingComponent,
-    DashboardComponent
+    DashboardComponent,
+    MenuComponent
   ],
   imports: [
     AppRoutingModule,

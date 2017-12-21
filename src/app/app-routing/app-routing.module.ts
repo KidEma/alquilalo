@@ -14,7 +14,7 @@ const routes: Routes = [
     component: LandingComponent,
   },
   {
-    path: 'home',
+    path: 'dashboard',
     component: DashboardComponent,
     canActivate: [
       AuthGuard

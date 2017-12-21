@@ -3,15 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
+import {NgcFloatButtonModule} from 'ngc-float-button';
 
 @NgModule({
   imports: [
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    NgcFloatButtonModule
   ],
   exports: [
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    NgcFloatButtonModule
   ],
   declarations: []
 })

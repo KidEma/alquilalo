@@ -43,7 +43,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
  * */
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppAngularMaterialModule} from '../app/app-angular-material/app-angular-material.module';
-import { MenuComponent } from './menu/menu.component'
+import { MenuComponent } from './menu/menu.component';
+import { DashboardCardComponent } from './dashboard-card/dashboard-card.component'
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { MenuComponent } from './menu/menu.component'
     AdminComponent,
     LandingComponent,
     DashboardComponent,
-    MenuComponent
+    MenuComponent,
+    DashboardCardComponent
   ],
   imports: [
     AppRoutingModule,

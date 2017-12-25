@@ -14,8 +14,12 @@
   .card-text{
     float: right;
     font-size: 18px;
-    width: 80%;
+    width: 70%;
     
 }
 
 .material-icons.md-48 { font-size: 48px; }
+
+.card-inner:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }

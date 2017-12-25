@@ -44,7 +44,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppAngularMaterialModule} from '../app/app-angular-material/app-angular-material.module';
 import { MenuComponent } from './menu/menu.component';
-import { DashboardCardComponent } from './dashboard-card/dashboard-card.component'
+import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component'
 
 @NgModule({
   declarations: [

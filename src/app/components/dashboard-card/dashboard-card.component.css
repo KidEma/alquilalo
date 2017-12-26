@@ -1,21 +1,21 @@
 
-  .card-inner{
-      height: 100%;
-      padding: 15px;
-      display: inline-block;
-      width: 100%;
-      min-width: 250px;
-  }
+.card-inner{
+    height: 100%;
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+    min-width: 250px;
+    cursor: pointer;
+}
 
-  .card-icon{
+.card-icon{
       float: left;
       width: 10%;
   }
-  .card-text{
+.card-text{
     float: right;
     font-size: 18px;
-    width: 70%;
-    
+    width: 70%;    
 }
 
 .material-icons.md-48 { font-size: 48px; }

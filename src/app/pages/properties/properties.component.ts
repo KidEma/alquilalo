@@ -1,0 +1,69 @@
+// src/app/pages/properties/properties.component.ts
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { AuthService } from './../../auth/auth.service';
+import { ApiService } from './../../core/api.service';
+import { UtilsService } from './../../core/utils.service';
+import { FilterSortService } from './../../core/filter-sort.service';
+import { Subscription } from 'rxjs/Subscription';
+import { PropertyModel } from './../../core/models/property.model';
+
+@Component({
+  selector: 'app-properties',
+  templateUrl: './properties.component.html',
+  styleUrls: ['./properties.component.scss']
+})
+export class PropertiesComponent implements OnInit, OnDestroy {
+  pageTitle = 'Propiedades';
+  propertiesSub: Subscription;
+  propertyList: PropertyModel[];
+  filteredProperties: PropertyModel[];
+  loading: boolean;
+  error: boolean;
+  query = '';
+
+  constructor(
+    private title: Title,
+    public auth: AuthService,
+    private api: ApiService,
+    public utils: UtilsService,
+    public fs: FilterSortService) { }
+
+  ngOnInit() {
+    this.title.setTitle(this.pageTitle);
+    this._getPropertiesList();
+  }
+
+  private _getPropertiesList() {
+    this.loading = true;
+    // Get all (admin) events
+    this.propertiesSub = this.api
+      .getAdminProperties$()
+      .subscribe(
+        res => {
+          this.propertyList = res;
+          this.filteredProperties = res;
+          this.loading = false;
+        },
+        err => {
+          console.error(err);
+          this.loading = false;
+          this.error = true;
+        }
+      );
+  }
+
+  searchProperties() {
+    this.filteredProperties = this.fs.search(this.propertyList, this.query, '_id', 'title');
+  }
+
+  resetQuery() {
+    this.query = '';
+    this.filteredProperties = this.propertyList;
+  }
+
+  ngOnDestroy() {
+    this.propertiesSub.unsubscribe();
+  }
+
+}

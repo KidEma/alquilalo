@@ -1,0 +1,72 @@
+<!-- src/app/pages/admin/admin.component.html -->
+<h1 class="text-center">{{pageTitle}}</h1>
+<app-loading *ngIf="loading"></app-loading>
+
+<ng-template [ngIf]="utils.isLoaded(loading)">
+ 
+  <!-- Events -->
+  <ng-template [ngIf]="propertyList">
+    <ng-template [ngIf]="propertyList.length">
+      <!-- Search events -->
+      <section class="search input-group mb-3">
+        <label class="input-group-addon" for="search">Search</label>
+        <input
+          id="search"
+          type="text"
+          class="form-control"
+          [(ngModel)]="query"
+          (keyup)="searchProperties()" />
+        <span class="input-group-btn">
+          <button
+            class="btn btn-danger"
+            (click)="resetQuery()"
+            [disabled]="!query">&times;</button>
+        </span>
+      </section>
+
+      <!-- No search results -->
+      <p *ngIf="fs.noSearchResults(filteredProperties, query)" class="alert alert-warning">
+        No se encontraron propiedades para <em class="text-danger">{{query}}</em>. Intentá otra cosa.
+      </p>
+
+      <!-- Properties listing -->
+      <section class="list-group">
+        <!-- <div
+          *ngFor="let property of filteredProperties"
+          class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-cont ent-between">
+            <a [routerLink]="['/property', property._id]">
+              <h5 class="mb-1" [innerHTML]="property.title"></h5>
+            </a>
+            <div class="event-icons">
+              <img
+                *ngIf="!property.viewPublic"
+                class="event-icon"
+                title="Private"
+                src="/assets/images/eye.svg">
+            </div>
+          </div>
+        </div> -->
+
+        <div class="cards"  >
+          <div class="card" 
+               *ngFor="let property of filteredProperties"
+          >
+          <app-property-list-card [content]="property"></app-property-list-card>
+        </div>
+        </div>
+      </section>
+    </ng-template>
+
+    <!-- No events available -->
+    <p *ngIf="!propertyList.length" class="alert alert-info">
+      No events have been created yet.
+    </p>
+  </ng-template>
+
+  <!-- Error loading events -->
+  <p *ngIf="error" class="alert alert-danger">
+    <strong>Oops!</strong> There was an error retrieving event data.
+  </p>
+
+</ng-template>

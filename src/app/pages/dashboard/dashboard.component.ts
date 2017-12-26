@@ -16,7 +16,8 @@ public alertCard : DashboardCard = {
     this.alertCard = {
       title: "8 alertas pendientes",
       description: "Hay items que requieren su atencion",
-      icon: "warning"
+      icon: "warning",
+      link: '/properties'
    }
   }
 

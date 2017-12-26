@@ -44,7 +44,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppAngularMaterialModule} from '../app/app-angular-material/app-angular-material.module';
 import { MenuComponent } from './menu/menu.component';
-import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component'
+import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
+import { PropertiesComponent } from './pages/properties/properties.component';
+import { ListCardComponent } from './components/list-card/list-card.component';
+import { PropertyListCardComponent } from './components/property-list-card/property-list-card.component'
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { DashboardCardComponent } from './components/dashboard-card/dashboard-ca
     LandingComponent,
     DashboardComponent,
     MenuComponent,
-    DashboardCardComponent
+    DashboardCardComponent,
+    PropertiesComponent,
+    ListCardComponent,
+    PropertyListCardComponent
   ],
   imports: [
     AppRoutingModule,

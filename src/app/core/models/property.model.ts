@@ -8,6 +8,7 @@ export class PropertyModel {
         public picturesId?: string,
         public functionalUnitNumber?: string,
         public description?: string,
+        public photo?: string,
         public _id?: string
     ) { }
 }

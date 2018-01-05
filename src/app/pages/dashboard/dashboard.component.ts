@@ -7,18 +7,31 @@ import { DashboardCard } from '../../components/dashboard-card'
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-public alertCard : DashboardCard = {
-  title: "8 alertas pendientes",
-  description: "Hay items que requieren su atencion",
-  icon: "warning"
-}
-  constructor() { 
+  public alertCard: DashboardCard;
+  public servicesCard: DashboardCard;
+  public contractsCard: DashboardCard;
+
+  constructor() {
     this.alertCard = {
-      title: "8 alertas pendientes",
-      description: "Hay items que requieren su atencion",
+      title: "Alquileres Atrasados",
+      description: "Hay 2 propiedades con alquileres atrasados",
       icon: "warning",
       link: '/properties'
-   }
+    }
+
+    this.servicesCard = {
+      title: "Servicios Impagos",
+      description: "Hay 10 propiedades con servicios impagos",
+      icon: "lightbulb_outline",
+      link: '/properties'
+    }
+
+    this.contractsCard = {
+      title: "Contratos",
+      description: "Hay 3 contratos por vencer",
+      icon: "library_books",
+      link: '/properties'
+    }
   }
 
   ngOnInit() {

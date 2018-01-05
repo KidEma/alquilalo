@@ -19,6 +19,7 @@ const propertySchema = new Schema({
   administratorsId: { type: [String] },
   ownersId: { type: [String] },
   picturesId: { type: [String] },
+  photo: { type: String }
 });
 
 module.exports = mongoose.model('Property', propertySchema);

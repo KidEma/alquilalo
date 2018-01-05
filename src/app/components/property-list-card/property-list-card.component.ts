@@ -7,12 +7,17 @@ import { PropertyModel } from '../../core/models/property.model';
   styleUrls: ['./property-list-card.component.css']
 })
 export class PropertyListCardComponent implements OnInit {
+ private filepath: string;
 
   @Input()
   content: PropertyModel;
-  constructor() { }
+  constructor() {
+    this.filepath = './assets/images/properties/'
+   }
 
   ngOnInit() {
+    this.filepath = './assets/images/properties/'
+    
   }
 
 }

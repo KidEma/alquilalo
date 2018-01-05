@@ -63,7 +63,7 @@ module.exports = function (app, config) {
     });
 
 
-    const _propertiesListProjection = 'title propertyType';
+    const _propertiesListProjection = 'title propertyType description photo';
 
     //   // GET list of properties by user - no login required - public access query
     //   app.get('/alquilalo/properties/:administratorId', (req, res) => {

@@ -47,8 +47,9 @@ import { MenuComponent } from './menu/menu.component';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { PropertiesComponent } from './pages/properties/properties.component';
 import { ListCardComponent } from './components/list-card/list-card.component';
-import { PropertyListCardComponent } from './components/property-list-card/property-list-card.component'
-
+import { PropertyListCardComponent } from './components/property-list-card/property-list-card.component';
+import { DashboardListViewComponent } from './components/dashboard-list-view/dashboard-list-view.component';
+import { DashboardListContainerComponent } from './components/dashboard-list-container/dashboard-list-container.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,9 @@ import { PropertyListCardComponent } from './components/property-list-card/prope
     DashboardCardComponent,
     PropertiesComponent,
     ListCardComponent,
-    PropertyListCardComponent
+    PropertyListCardComponent,
+    DashboardListViewComponent,
+    DashboardListContainerComponent
   ],
   imports: [
     AppRoutingModule,

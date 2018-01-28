@@ -1,0 +1,16 @@
+.card {
+    width: 18%;
+    min-width: 160px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.list-card-content {
+    width: 100%;
+    display: inline-block;    
+}
+
+.card-img {
+    display: block;
+}

@@ -18,7 +18,7 @@ export class FilterSortService {
     return check;
   }
 
-  search(array: any[], query: string, excludeProps?: string|string[], dateFormat?: string) {
+  search(array: any[], query: string, excludeProps?: string | string[], dateFormat?: string) {
     // Match query to strings and Date objects / ISO UTC strings
     // Optionally exclude properties from being searched
     // If matching dates, can optionally pass in date format string
@@ -73,6 +73,12 @@ export class FilterSortService {
       return !reverse ? dateA - dateB : dateB - dateA;
     });
     return sortedArray;
+  }
+
+  searchDateRange(array: any[], property: string, beginDate: Date, endDate: Date) {
+    return array.filter(item =>{
+      return item[property] <= endDate
+    })
   }
 
 }

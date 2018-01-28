@@ -1,0 +1,8 @@
+<div class="list-container">
+    <div *ngIf="list" >
+        <app-list-card *ngFor="let item of list" [content]="item" ></app-list-card>
+        <div *ngIf="list.length < 1">
+                No hay propiedades.
+        </div>
+    </div>
+</div>

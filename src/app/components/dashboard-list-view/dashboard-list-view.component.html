@@ -1,0 +1,7 @@
+<div class="container-placeholder" *ngIf='data'>
+  Alquileres vencidos o que vencen en los próximos 
+  <input class="filter-input" type="number"  
+  [(ngModel)]="query"
+  (ngModelChange)="searchProperties($event)"/> días.
+  <app-dashboard-list-container [list]="filteredProperties"></app-dashboard-list-container>
+</div>

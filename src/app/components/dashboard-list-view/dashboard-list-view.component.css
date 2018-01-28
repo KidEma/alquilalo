@@ -1,0 +1,9 @@
+.filter-input {
+    width: 50px;
+}
+.container-placeholder {
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    padding: 10px;
+}

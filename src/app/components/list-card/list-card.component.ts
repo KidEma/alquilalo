@@ -8,6 +8,7 @@ import { PropertyToExpireModel } from '../../core/models/propertyToExpire.model'
 })
 export class ListCardComponent implements OnInit {
   private filepath: string;
+  private link: string;
   @Input()
   content: PropertyToExpireModel;
 
@@ -15,6 +16,7 @@ export class ListCardComponent implements OnInit {
 
   ngOnInit() {
     this.filepath = './assets/images/properties/'
+    this.link = '/property/' + this.content._id
 
   }
 

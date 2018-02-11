@@ -11,12 +11,14 @@ const jwks = require('jwks-rsa');
 // Properties
 const Property = require('./models/Property');
 
-// Persons
-const Person = require('./models/Person');
+// Users
+const User = require('./models/User');
 
 // Leases
 const Lease = require('./models/Lease');
-const LeaseAmount = require('./models/LeaseAmount');
+
+// LeaseInstalment
+const LeaseInstalment = require('./models/LeaseInstalment');
 
 // Addresses
 const Address = require('./models/Address');
@@ -63,7 +65,7 @@ module.exports = function (app, config) {
     });
 
 
-    const _propertiesListProjection = 'title propertyType description photo';
+    const _propertiesListProjection = 'title type description photoThumb';
 
     //   // GET list of properties by user - no login required - public access query
     //   app.get('/alquilalo/properties/:administratorId', (req, res) => {

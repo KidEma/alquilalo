@@ -1,20 +1,21 @@
 // server/models/Lease.js
 /*
- |--------------------------------------
- | Lease Model
- |--------------------------------------
- */
-
+|--------------------------------------
+| Lease Model
+|--------------------------------------
+*/
+ 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const leaseSchema = new Schema({
-    tenantsId: { type: [String] },
-    propertyId: { type: String, required: true },
-    startDatetime: { type: Date, required: true },
-    endDatetime: { type: Date, required: true },
-    active: { type: Boolean, required: true },
-    comments: String
+    _id: { type: Number, index: { unique: true } },
+    tenantsId: { type: [Number], required: true },
+    ownerIds: { type: [Number], required: true },
+    agentIds: { type: [Number], required: true },
+    startDate: { type: Date, required: false },
+    endDate: { type: Date, required: false },
+    leaseInstalmentIds: { type: [Number], required: false },
 });
 
 module.exports = mongoose.model('Lease', leaseSchema);  

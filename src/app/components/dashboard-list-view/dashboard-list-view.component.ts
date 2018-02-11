@@ -54,9 +54,9 @@ export class DashboardListViewComponent implements OnInit {
     .map(function (val) {
       return {
         title: val.title,
-        propertyType: val.propertyType,
+        type: val.type,
         description: val.description,
-        photo: val.photo,
+        photoThumb: val.photoThumb,
         amount: 1000,
         expiryDate: new Date()
       };

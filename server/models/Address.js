@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const addressSchema = new Schema({
-    _id: { type: Number, index: { unique: true } },
+    _id: { type: String, index: { unique: true } },
     houseNumberBusinessName: { type: String, required: true },
     line1: { type: String, required: false },
     line2: { type: String, required: false },

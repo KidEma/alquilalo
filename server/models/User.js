@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    _id: { type: Number, index: { unique: true } },
+    _id: { type: String, index: { unique: true } },
     auth0UserId: { type: String, required: false}, // Possibly use this as unique index?
     userType: { type: String, required: true },
     displayName: { type: String, required: true },

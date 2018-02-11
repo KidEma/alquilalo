@@ -19,7 +19,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const propertySchema = new Schema({
-    _id: { type: Number, index: { unique: true } },
+    _id: { type: String, index: { unique: true } },
     title: { type: String, required: true },
     description: { type: String, required: false },
     type: { type: String, required: false },

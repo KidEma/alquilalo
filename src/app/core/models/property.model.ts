@@ -13,7 +13,7 @@ export class PropertyModel {
     // ) { }
 
     constructor(
-        public _id: number,
+        public _id: string,
         public title: string,
         public userIds?: [number],
         public ownerIds?: [number],

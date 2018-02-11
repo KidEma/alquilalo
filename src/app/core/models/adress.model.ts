@@ -10,7 +10,7 @@ export class AdressModel {
     // ) { }
 
     constructor(
-        public _id: Number,
+        public _id: string,
         public houseNumberBusinessName: string,
         public postalCode: string,
         public line1?: string,

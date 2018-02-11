@@ -8,6 +8,7 @@ import { AdminGuard } from '../auth/admin.guard';
 import { AdminComponent } from '../pages/admin/admin.component';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 import { PropertiesComponent } from '../pages/properties/properties.component';
+import { PropertyComponent } from '../pages/property/property.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,13 @@ const routes: Routes = [
   {
     path: 'properties',
     component: PropertiesComponent,
+    canActivate: [
+      AuthGuard
+    ]
+  },
+  {
+    path: 'property/:propertyId',
+    component: PropertyComponent,
     canActivate: [
       AuthGuard
     ]

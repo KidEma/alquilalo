@@ -1,5 +1,5 @@
 <div class="cards">
- <app-dashboard-list-view [data]="propertyList"></app-dashboard-list-view>
+ <app-dashboard-list-view *ngIf="!loading" [data]="propertyList"></app-dashboard-list-view>
   <div class="card">
     <app-dashboard-card [content]="alertCard"></app-dashboard-card>
   </div>
@@ -8,5 +8,5 @@
     </div>  
     <div class="card">
         <app-dashboard-card [content]="contractsCard"></app-dashboard-card>
-      </div>  
+    </div>  
 </div>

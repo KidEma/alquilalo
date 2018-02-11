@@ -25,7 +25,7 @@ export class DashboardListViewComponent implements OnInit {
     public auth: AuthService,
     private api: ApiService,
     public utils: UtilsService,
-    public fs: FilterSortService) {
+    public fs: FilterSortService) {      
   }
 
   ngOnInit() {
@@ -49,7 +49,7 @@ export class DashboardListViewComponent implements OnInit {
   }
 
   transformModel(data: PropertyModel[]) {
-    if (!data) return [];
+    if (!this.data) return [];
     return data
     .map(function (val) {
       return {
@@ -58,7 +58,8 @@ export class DashboardListViewComponent implements OnInit {
         description: val.description,
         photoThumb: val.photoThumb,
         amount: 1000,
-        expiryDate: new Date()
+        expiryDate: new Date(),
+        _id: val._id
       };
     });
   }

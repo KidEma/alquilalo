@@ -7,8 +7,6 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
 /*
  *
  * Auth modules and services
@@ -34,6 +32,7 @@ import { LoadingComponent } from './core/loading.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 /*
@@ -41,9 +40,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
  * Angular material components
  * 
  * */
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppAngularMaterialModule} from '../app/app-angular-material/app-angular-material.module';
-import { MenuComponent } from './menu/menu.component';
+
 
 /*
  *
@@ -57,7 +55,9 @@ import { ListCardComponent } from './components/list-card/list-card.component';
 import { PropertyListCardComponent } from './components/property-list-card/property-list-card.component';
 import { DashboardListViewComponent } from './components/dashboard-list-view/dashboard-list-view.component';
 import { DashboardListContainerComponent } from './components/dashboard-list-container/dashboard-list-container.component';
-import { PropertyComponent } from './pages/property/property.component'
+import { PropertyComponent } from './pages/property/property.component';
+import { PropertyFormComponent } from './components/property-form/property-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,14 +76,13 @@ import { PropertyComponent } from './pages/property/property.component'
     PropertyListCardComponent,
     DashboardListViewComponent,
     DashboardListContainerComponent,
-    PropertyComponent
+    PropertyComponent,
+    PropertyFormComponent,
   ],
   imports: [
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
-    FormsModule,
-    BrowserAnimationsModule,
     AppAngularMaterialModule
   ],
   providers: [

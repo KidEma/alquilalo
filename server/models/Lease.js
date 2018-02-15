@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const leaseSchema = new Schema({
-    _id: { type: String, index: { unique: true } },                     // Unique identifier of lease
+    _id: { type: String, index: { unique: true} },                      // Unique ID
     tenantsId: { type: [Number], required: true },                      // List of tenants in lease
     ownerIds: { type: [Number], required: true },                       // List of owners in lease
     agentIds: { type: [Number], required: true },                       // List of agents in lease

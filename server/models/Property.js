@@ -19,22 +19,22 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const propertySchema = new Schema({
-    _id: { type: String, index: { unique: true } },                 // Unique identifier
-    title: { type: String, required: true },                        // Property display title name
-    description: { type: String, required: false },                 // Property description
-    type: { type: String, required: false },                        // Property type, see above for list
-    photoThumb: { type: String, required: false },                  // Property photo thumbnail
-    photos: { type: [String], required: false },                    // List of IDs of all property photos
-    activeLeaseId: { type: Number, required: false },               // Current active lease ID on property
-    leaseIds: { type: [Number], required: false },                  // All property lease IDs including expired and active
-    userIds: { type: [Number], required: false },                   // Property user/viewer IDs
-    ownerIds: { type: [Number], required: false },                  // Property owner IDs
-    agencyId: { type: Number, required: false },                    // Property agency/manager IDs
-    addressId: { type: Number, required: false },                   // Link to ID in addresses table for property address
-    bathRooms: { type: Number, required: false },                   // Amount of rooms in property
-    bedRooms: { type: Number, required: false },                    // Amount of rooms in property
-    totalRooms: { type: Number, required: false },                  // Amount of rooms in property
-    furnished: { type: Boolean, required: false }                   // Boolean if property is furnished or not
+    _id: { type: String, index: { unique: true} },                      // Unique ID
+    title: { type: String, required: true },                            // Property display title name
+    description: { type: String, required: false },                     // Property description
+    type: { type: String, required: false },                            // Property type, see above for list
+    photoThumb: { type: String, required: false },                      // Property photo thumbnail
+    photos: { type: [String], required: false },                        // List of IDs of all property photos
+    activeLeaseId: { type: Number, required: false },                   // Current active lease ID on property
+    leaseIds: { type: [Number], required: false },                      // All property lease IDs including expired and active
+    userIds: { type: [Number], required: false },                       // Property user/viewer IDs
+    ownerIds: { type: [Number], required: false },                      // Property owner IDs
+    agencyId: { type: Number, required: false },                        // Property agency/manager IDs
+    addressId: { type: Number, required: false },                       // Link to ID in addresses table for property address
+    bathRooms: { type: Number, required: false },                       // Amount of rooms in property
+    bedRooms: { type: Number, required: false },                        // Amount of rooms in property
+    totalRooms: { type: Number, required: false },                      // Amount of rooms in property
+    furnished: { type: Boolean, required: false }                       // Boolean if property is furnished or not
 });
 
 module.exports = mongoose.model('Property', propertySchema);

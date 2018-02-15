@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const LeaseInstalmentSchema = new Schema({
-    _id: { type: Number, index: {unique: true} },                       // Unique ID of instalment
+    _id: { type: String, index: { unique: true} },                      // Unique ID
     value: { type: Number, required: true },                            // Amount of instalment cost
     currencyCode: { type: String, required: true },                     // ISO currency code of amount
     paymentDue: { type: Date, required: true },                         // Date instalment payment is due

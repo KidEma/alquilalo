@@ -19,12 +19,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const PhotoSchema = new Schema({
-    _id: { type: Number, index: {unique: true} },                // Unique identifier of image
-    filepath: { type: String, required: true },                  // Filename/url/path of full quality asset image file
-    base64encoded: { type: String, required: false },            // Thumbnail encoded in base64 string
-    description: { type: String, required: false },              // Display description or name of image
-    photoDate: { type: Date, required: false },                  // Date photo was taken
-    uploadedDate: { type: Date, required: false }                // Date photo was uploaded (automatically generated)
+    _id: { type: String, index: { unique: true} },                      // Unique ID
+    filepath: { type: String, required: true },                         // Filename/url/path of full quality asset image file
+    base64encoded: { type: String, required: false },                   // Thumbnail encoded in base64 string
+    description: { type: String, required: false },                     // Display description or name of image
+    photoDate: { type: Date, required: false },                         // Date photo was taken
+    uploadedDate: { type: Date, required: false }                       // Date photo was uploaded (automatically generated)
 });
 
 module.exports = mongoose.model('Photo', PhotoSchema);  

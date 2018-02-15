@@ -9,13 +9,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const leaseSchema = new Schema({
-    _id: { type: String, index: { unique: true } },
-    tenantsId: { type: [Number], required: true },
-    ownerIds: { type: [Number], required: true },
-    agentIds: { type: [Number], required: true },
-    startDate: { type: Date, required: false },
-    endDate: { type: Date, required: false },
-    leaseInstalmentIds: { type: [Number], required: false },
+    _id: { type: String, index: { unique: true } },                     // Unique identifier of lease
+    tenantsId: { type: [Number], required: true },                      // List of tenants in lease
+    ownerIds: { type: [Number], required: true },                       // List of owners in lease
+    agentIds: { type: [Number], required: true },                       // List of agents in lease
+    startDate: { type: Date, required: false },                         // Start date of lease
+    endDate: { type: Date, required: false },                           // End date of lease
+    leaseInstalmentIds: { type: [Number], required: false }             // List of leaseInstalment IDs
 });
 
 module.exports = mongoose.model('Lease', leaseSchema);  

@@ -6,6 +6,8 @@
 */
 
 // List of possible userTypes:
+// 
+// 
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;

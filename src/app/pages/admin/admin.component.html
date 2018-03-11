@@ -26,14 +26,14 @@
       </section>
 
       <!-- No search results -->
-      <p *ngIf="fs.noSearchResults(filteredProperties, query)" class="alert alert-warning">
+      <p *ngIf="fs.noSearchResults(filteredEvents, query)" class="alert alert-warning">
         No events found for <em class="text-danger">{{query}}</em>, sorry!
       </p>
 
       <!-- Events listing -->
       <section class="list-group">
         <div
-          *ngFor="let property of filteredProperties"
+          *ngFor="let property of filteredEvents"
           class="list-group-item list-group-item-action flex-column align-items-start">
           <div class="d-flex w-100 justify-cont ent-between">
             <a [routerLink]="['/property', property._id]">

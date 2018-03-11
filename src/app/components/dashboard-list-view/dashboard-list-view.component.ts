@@ -17,7 +17,7 @@ export class DashboardListViewComponent implements OnInit {
   error: boolean;
   propertiesSub: Subscription;
   propertyList: PropertyModel[];
-  filteredProperties: PropertyToExpireModel[];
+  filteredEvents: PropertyToExpireModel[];
   query: number = 10;
   @Input()
   data: PropertyModel[];
@@ -30,13 +30,13 @@ export class DashboardListViewComponent implements OnInit {
 
   ngOnInit() {
     this.query = 10;
-    this.filteredProperties = this.transformModel(this.data);
+    this.filteredEvents = this.transformModel(this.data);
   }
 
   searchProperties() {
     if (this.query)
       //TODO: retrieve actual data
-      this.filteredProperties = this.fs
+      this.filteredEvents = this.fs
       .searchDateRange(this.transformModel(this.data), 
       "expiryDate", 
       new Date(), 
@@ -45,7 +45,7 @@ export class DashboardListViewComponent implements OnInit {
 
   resetQuery() {
     this.query = 10;
-    this.filteredProperties = this.transformModel(this.data);
+    this.filteredEvents = this.transformModel(this.data);
   }
 
   transformModel(data: PropertyModel[]) {
@@ -56,8 +56,8 @@ export class DashboardListViewComponent implements OnInit {
         title: val.title,
         type: val.type,
         description: val.description,
+        price: val.price,
         photoThumb: val.photoThumb,
-        amount: 1000,
         expiryDate: new Date(),
         _id: val._id
       };

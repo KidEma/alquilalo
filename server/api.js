@@ -65,7 +65,6 @@ module.exports = function (app, config) {
     });
 
 
-    const _propertiesListProjection = 'title type description photoThumb';
 
     //   // GET list of properties by user - no login required - public access query
     //   app.get('/alquilalo/properties/:administratorId', (req, res) => {
@@ -83,6 +82,9 @@ module.exports = function (app, config) {
     //     });
     //   });
 
+
+    const _propertiesListProjection = 'title type description price photoThumb';
+    
     // GET list of all properties (admin only)
     app.get('/alquilalo/properties/admin', jwtCheck, adminCheck, (req, res) => {
         Property.find({}, _propertiesListProjection, (err, properties) => {

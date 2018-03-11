@@ -17,7 +17,7 @@ export class PropertiesComponent implements OnInit, OnDestroy {
   pageTitle = 'Propiedades';
   propertiesSub: Subscription;
   propertyList: PropertyModel[];
-  filteredProperties: PropertyModel[];
+  filteredEvents: PropertyModel[];
   loading: boolean;
   error: boolean;
   query = '';
@@ -42,7 +42,7 @@ export class PropertiesComponent implements OnInit, OnDestroy {
       .subscribe(
         res => {
           this.propertyList = res;
-          this.filteredProperties = res;
+          this.filteredEvents = res;
           this.loading = false;
         },
         err => {
@@ -54,12 +54,12 @@ export class PropertiesComponent implements OnInit, OnDestroy {
   }
 
   searchProperties() {
-    this.filteredProperties = this.fs.search(this.propertyList, this.query, '_id', 'title');
+    this.filteredEvents = this.fs.search(this.propertyList, this.query, '_id', 'title');
   }
 
   resetQuery() {
     this.query = '';
-    this.filteredProperties = this.propertyList;
+    this.filteredEvents = this.propertyList;
   }
 
   ngOnDestroy() {

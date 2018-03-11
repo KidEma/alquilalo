@@ -22,6 +22,7 @@ const propertySchema = new Schema({
     _id: { type: String, index: { unique: true} },                      // Unique ID
     title: { type: String, required: true },                            // Property display title name
     description: { type: String, required: false },                     // Property description
+    price: { type: Number, required: false },                           // Property price as a number
     type: { type: String, required: false },                            // Property type, see above for list
     photoThumb: { type: String, required: false },                      // Property photo thumbnail
     photos: { type: [String], required: false },                        // List of IDs of all property photos

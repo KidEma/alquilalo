@@ -25,7 +25,7 @@
       </section>
 
       <!-- No search results -->
-      <p *ngIf="fs.noSearchResults(filteredProperties, query)" class="alert alert-warning">
+      <p *ngIf="fs.noSearchResults(filteredEvents, query)" class="alert alert-warning">
         No se encontraron propiedades para <em class="text-danger">{{query}}</em>. Intentá otra cosa.
       </p>
 
@@ -50,7 +50,7 @@
 
         <div class="cards"  >
           <div class="card" 
-               *ngFor="let property of filteredProperties"
+               *ngFor="let property of filteredEvents"
           >
           <app-property-list-card [content]="property"></app-property-list-card>
         </div>
